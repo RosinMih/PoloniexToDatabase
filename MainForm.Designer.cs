@@ -48,6 +48,7 @@ namespace PoloniexToDatabase
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.numericUpDownPause = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPause)).BeginInit();
             this.SuspendLayout();
@@ -163,6 +164,7 @@ namespace PoloniexToDatabase
             this.textBoxMessage.Location = new System.Drawing.Point(27, 179);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
+            this.textBoxMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxMessage.Size = new System.Drawing.Size(649, 163);
             this.textBoxMessage.TabIndex = 4;
             // 
@@ -224,7 +226,13 @@ namespace PoloniexToDatabase
             this.label5.TabIndex = 8;
             this.label5.Text = "Пауза между запросами, с";
             // 
-            // MaimForm
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,7 +246,7 @@ namespace PoloniexToDatabase
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "MaimForm";
+            this.Name = "MainForm";
             this.Text = "PoloniextToDatabase";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -267,6 +275,7 @@ namespace PoloniexToDatabase
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.NumericUpDown numericUpDownPause;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
